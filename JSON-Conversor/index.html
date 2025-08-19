@@ -25,22 +25,22 @@
         <input type="number" name="idade" id="idade">
         <br>
 
-        <label for="profissão">Profissão:</label>
+        <label for="profis">Profissão:</label>
         <input type="text" name="profissão" id="profis">
         <br>
 
-        <label for="hobbies">Hobbies: </label>
+        <label for="hobbie">Hobbies: </label>
         <input type="text" name="hobbies" id="hobbie">
-        <input style="display:none;" type="text" name="hobbies" id="hobbie2">
-        <input style="display:none;" type="text" name="hobbies" id="hobbie3">
+        <input class="esconder" type="text" name="hobbies" id="hobbie2">
+        <input class="esconder" type="text" name="hobbies" id="hobbie3">
 
         <div style="display: flex;">
             <input class="checkbox" name="checkbox" id="check" type="checkbox">
 
-            <label style="color: #808080;" for="checkbox">Tem mais de um hobbie?</label>
+            <label style="color: #808080;" for="check">Tem mais de um hobbie?</label>
         </div>
 
-        <input class="btn-gerar" type="button" value="Gerar Object">
+        <input class="btn-gerar" type="button" value="Gerar Object" onclick="gerarObject()">
         
     </form>
 

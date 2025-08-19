@@ -20,3 +20,12 @@ body{
     background-color: #fff;
     cursor: pointer;
 }
+
+.mostrar{
+    display: block;
+    margin-top: 10px;
+}
+
+.esconder{
+    display: none;
+}
