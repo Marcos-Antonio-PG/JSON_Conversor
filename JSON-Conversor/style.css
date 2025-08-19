@@ -1,0 +1,22 @@
+body{
+    font-family: "Share Tech", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.form{
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    margin: 10px;
+    border: solid 3px #000;
+    border-radius: 10px;
+    width: 300px;
+}
+
+.btn-gerar{
+    margin-top: 15px;
+    width: 100px;
+    background-color: #fff;
+    cursor: pointer;
+}

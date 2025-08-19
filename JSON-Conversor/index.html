@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JSON-Conversor</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Share+Tech&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <h1>Conversor de Object para String (e vice-versa)</h1>
+    <form class="form">
+        <label for="nome">Primeiro Nome:</label>
+        <input type="text" name="nome" id="nome">
+        <br>
+
+        <label for="idade">Idade:</label>
+        <input type="number" name="idade" id="idade">
+        <br>
+
+        <label for="profissão">Profissão:</label>
+        <input type="text" name="profissão" id="profis">
+        <br>
+
+        <label for="hobbies">Hobbies: </label>
+        <input type="text" name="hobbies" id="hobbie">
+        <input style="display:none;" type="text" name="hobbies" id="hobbie2">
+        <input style="display:none;" type="text" name="hobbies" id="hobbie3">
+
+        <div style="display: flex;">
+            <input class="checkbox" name="checkbox" id="check" type="checkbox">
+
+            <label style="color: #808080;" for="checkbox">Tem mais de um hobbie?</label>
+        </div>
+
+        <input class="btn-gerar" type="button" value="Gerar Object">
+        
+    </form>
+
+
+    <script src="script.js"></script>
+</body>
+
+</html>
