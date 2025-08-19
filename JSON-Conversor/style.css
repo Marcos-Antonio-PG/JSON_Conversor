@@ -29,3 +29,21 @@ body{
 .esconder{
     display: none;
 }
+
+.info {
+    padding: 10px;
+}
+
+.res-panel {
+    margin: 10px;
+    background-color: #404040;
+    border-radius: 12px;
+    width: max-content;
+    height: max-content;
+}
+
+.res {
+    color: #fff;
+    margin: 10px;
+    text-decoration: underline;
+}

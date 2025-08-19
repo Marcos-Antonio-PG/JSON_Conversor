@@ -2,6 +2,10 @@ const check = document.getElementById('check')
 const inpHob1 = document.getElementById('hobbie')
 const inpHob2 = document.getElementById('hobbie2')
 const inpHob3 = document.getElementById('hobbie3')
+const inpNome = document.getElementById('nome')
+const inpIdade = document.getElementById('idade')
+const inpProfis = document.getElementById('profis')
+
 
 check.addEventListener('change', () => {
     if (check.checked) {
@@ -19,3 +23,11 @@ check.addEventListener('change', () => {
     }
 
 })
+
+function gerarObject() {
+    const nome = inpNome.value
+    const idade = inpIdade.value
+    const profis = inpProfis.value
+
+    
+}
