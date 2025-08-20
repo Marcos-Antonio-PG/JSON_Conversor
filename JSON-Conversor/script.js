@@ -40,11 +40,11 @@ function gerarObject() {
         hobbies.push(hobbie1)
     }
 
-    if (check.checked & hobbie2.trim() !== '') {
+    if (check.checked && hobbie2.trim() !== '') {
         hobbies.push(hobbie2)
     }
 
-    if (check.checked & hobbie3.trim() !== '') {
+    if (check.checked && hobbie3.trim() !== '') {
         hobbies.push(hobbie3)
     }
 
