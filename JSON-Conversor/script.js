@@ -7,7 +7,7 @@ const inpIdade = document.getElementById('idade')
 const inpProfis = document.getElementById('profis')
 const res = document.querySelector('p.res')
 const jsonConvBtn = document.getElementById('json-btn')
-const stringConvBtn = document.getElementById('string-btn')
+const ObjConvBtn = document.getElementById('string-btn')
 
 check.addEventListener('change', () => {
     if (check.checked) {
@@ -26,79 +26,69 @@ check.addEventListener('change', () => {
 
 })
 
-function gerarObject() {
-    let nome = inpNome.value
-    let idade = inpIdade.value
-    let profis = inpProfis.value
-    let hobbie1 = inpHob1.value
-    let hobbie2 = inpHob2.value
-    let hobbie3 = inpHob3.value
+function pegarForm() {
 
     hobbies = []
 
-    if (hobbie1.trim() !== '') {
-        hobbies.push(hobbie1)
+    if (inpHob1.value.trim() !== '') {
+        hobbies.push(inpHob1.value)
     }
 
-    if (check.checked && hobbie2.trim() !== '') {
-        hobbies.push(hobbie2)
+    if (check.checked && inpHob2.value.trim() !== '') {
+        hobbies.push(inpHob2.value)
     }
 
-    if (check.checked && hobbie3.trim() !== '') {
-        hobbies.push(hobbie3)
+    if (check.checked && inpHob3.value.trim() !== '') {
+        hobbies.push(inpHob3.value)
     }
 
+    return {
+        nome: inpNome.value,
+        idade: inpIdade.value,
+        profissão: inpProfis.value,
+        hobbies: hobbies
+    }
+}
+function gerarObject() {
 
-    if (nome == '') {
+    const pessoa = pegarForm()
+
+    if (pessoa.nome == '') {
         alert('Erro! Digite seu nome!')
-    } else if (idade == '') {
+    } else if (pessoa.idade == '') {
         alert('Erro! Digite sua idade!')
-    } else if (profis == '') {
+    } else if (pessoa.profissão == '') {
         alert('Erro! Digite sua profissão, se não tiver uma, escreva "Desempregado"')
-    } else if (hobbie1 == '') {
+    } else if (pessoa.hobbies.lenght === 0) {
         alert('Erro! Digite seu Hobbie, algo que sempre faz nos tempos livres!')
     } else {
 
         res.style.padding = '10px'
         res.innerHTML = `{
-    nome: "${nome}",
-    idade: ${idade},
-    profissão: "${profis}",
-    hobbies: [${hobbies.map(h => `"${h}"`).join(", ")}],
-    },`
+        nome: "${pessoa.nome}",
+        idade: ${pessoa.idade},
+        profissão: "${pessoa.profissão}",
+        hobbies: [${hobbies.map(h => `"${h}"`).join(", ")}],
+        },`
 
     }
 
 }
 
-function converterJson() {
+function converterToJson() {
 
-    if (res.innerHTML == '') {
+    const pessoa = pegarForm()
+
+    if (res.innerHTML.trim() == '') {
         alert('Erro! Gere um Object para poder converter!')
-    } else {
-        let nome = inpNome.value
-        let idade = inpIdade.value
-        let profis = inpProfis.value
-        let hobbie1 = inpHob1.value
-        let hobbie2 = inpHob2.value
-        let hobbie3 = inpHob3.value
+    }
 
-        if (res.innerHTML !== '') {
+    if (res.innerHTML !== '') {
 
+        res.innerHTML = JSON.stringify(pessoa, null, 4)
 
-            res.style.padding = '10px'
-            res.innerHTML = `{
-            "nome": "${nome}",
-            "idade": ${idade},
-            "profissão": "${profis}",
-            "hobbies": [${hobbies.map(h => `"${h}"`).join(", ")}]
-            }`
-
-            jsonConvBtn.classList.add('esconder')
-            stringConvBtn.classList.remove('esconder')
-
-        }
-
+        jsonConvBtn.classList.add('esconder')
+        ObjConvBtn.classList.remove('esconder')
 
     }
 
@@ -106,23 +96,22 @@ function converterJson() {
 }
 
 
-function converterString() {
-    let nome = inpNome.value
-    let idade = inpIdade.value
-    let profis = inpProfis.value
-    let hobbie1 = inpHob1.value
-    let hobbie2 = inpHob2.value
-    let hobbie3 = inpHob3.value
-    let tipo = "object"
 
-    res.style.padding = '10px'
-    res.innerHTML = `{
-        nome: "${nome}",
-        idade: ${idade},
-        profissão: "${profis}",
+function converterToObject() {
+
+    const pessoa = pegarForm()
+
+
+      res.style.padding = '10px'
+        res.innerHTML = `{
+        nome: "${pessoa.nome}",
+        idade: ${pessoa.idade},
+        profissão: "${pessoa.profissão}",
         hobbies: [${hobbies.map(h => `"${h}"`).join(", ")}],
         },`
 
         jsonConvBtn.classList.remove('esconder')
-        stringConvBtn.classList.add('esconder')
+        ObjConvBtn.classList.add('esconder')
+
+
 }
