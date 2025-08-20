@@ -45,5 +45,8 @@ body{
 .res {
     color: #fff;
     margin: 10px;
-    text-decoration: underline;
+}
+
+.conv-btn {
+background-color: #fff;
 }

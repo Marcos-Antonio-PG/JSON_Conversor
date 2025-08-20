@@ -5,6 +5,7 @@ const inpHob3 = document.getElementById('hobbie3')
 const inpNome = document.getElementById('nome')
 const inpIdade = document.getElementById('idade')
 const inpProfis = document.getElementById('profis')
+const res = document.querySelector('p.res')
 
 
 check.addEventListener('change', () => {
@@ -25,9 +26,46 @@ check.addEventListener('change', () => {
 })
 
 function gerarObject() {
-    const nome = inpNome.value
-    const idade = inpIdade.value
-    const profis = inpProfis.value
+    let nome = inpNome.value
+    let idade = inpIdade.value
+    let profis = inpProfis.value
+    let hobbie1 = inpHob1.value
+    let hobbie2 = inpHob2.value
+    let hobbie3 = inpHob3.value
 
+   hobbies = []
+
+   if (hobbie1.trim() !== '') {
+        hobbies.push(hobbie1)
+   }
+
+   if (check.checked & hobbie2.trim() !== '') {
+        hobbies.push(hobbie2)
+   }
+
+   if (check.checked & hobbie3.trim() !== '') {
+        hobbies.push(hobbie3)
+   }
+
+
+   if(nome == '') {
+    alert('Erro! Digite seu nome!')
+   } else if (idade == '') {
+    alert('Erro! Digite sua idade!')
+   } else if (profis == '') {
+    alert('Erro! Digite sua profissão, se não tiver uma, escreva "Desempregado"')
+   } else if (hobbie1 == '') {
+    alert('Erro! Digite seu Hobbie, algo que sempre faz nos tempos livres!')
+   } else {
+
+     res.style.padding = '10px'
+    res.innerHTML = `{
+    nome: "${nome}",
+    idade: ${idade},
+    profissão: "${profis}",
+    hobbies: [${hobbies.map(h => `"${h}"`).join(", ")}],
+    },`
+
+   }
     
 }
