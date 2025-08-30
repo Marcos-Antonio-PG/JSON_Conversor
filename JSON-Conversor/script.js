@@ -59,7 +59,7 @@ function gerarObject() {
         alert('Erro! Digite sua idade!')
     } else if (pessoa.profissão == '') {
         alert('Erro! Digite sua profissão, se não tiver uma, escreva "Desempregado"')
-    } else if (pessoa.hobbies.lenght === 0) {
+    } else if (pessoa.hobbies == '') {
         alert('Erro! Digite seu Hobbie, algo que sempre faz nos tempos livres!')
     } else {
 
